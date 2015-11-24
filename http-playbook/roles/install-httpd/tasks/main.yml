@@ -1,14 +1,7 @@
 ---
-  - name: install httpd for ubunutu
-    apt : name=apache2 state=present
-    when: ansible_distribution == 'Ubuntu'
-
   - name: install httpd for Centos
     yum: name=httpd state=present
     when: ansible_distribution == 'CentOS'
-
-  - name: Start and enable Apache
-    action: service name=httpd state=started enabled=yes
 
 
   - name: Copy index.html
