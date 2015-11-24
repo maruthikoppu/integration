@@ -1,13 +1,7 @@
 ---
-  - name: install httpd for Centos
-    yum: name=httpd state=present
-    when: ansible_distribution == 'CentOS'
-
-
-  - name: Copy index.html
-    copy: src=index.html dest=/var/www/html/index.html backup=yes
-    when: ansible_distribution == 'CentOS'
-
-  - name: Copy index config
-    template: src=index.html.j2 dest=/var/www/html/template.html
-    notify: restart webserver
+  - name: install httpd service
+    yum: name=httpd state=installed
+  - name: start the http server
+    service: name=httpd state=started
+  - name: copy
+    copy: src=index.html dest=/var/www/html/index.html
