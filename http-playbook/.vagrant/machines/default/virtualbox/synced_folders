@@ -1,0 +1,1 @@
+{"rsync":{"/home/vagrant/sync":{"type":"rsync","guestpath":"/home/vagrant/sync","hostpath":"/Users/bxy038/aws-class/ansible/http-playbook","disabled":false,"owner":"vagrant","group":"vagrant"}}}
